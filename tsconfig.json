@@ -11,11 +11,13 @@
     "target": "es6",
     "sourceMap": true,
     "allowJs": true,
-    "outDir": "./dist",
+//    "outDir": "./dist",
+    "outDir": ".",
     "baseUrl": "./src"
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "index.ts"
   ],
   "exclude": [
     "node_modules",
