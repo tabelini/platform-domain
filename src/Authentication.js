@@ -1,7 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var User = /** @class */ (function () {
-    function User(id, customerId, username, email, passwordHash, roles) {
+class AuthenticationCredentials {
+    constructor(id, customerId, roles, type) {
+        this.id = id;
+        this.customerId = customerId;
+        this.roles = roles;
+        this.type = type;
+    }
+    hasAnyRole(roles) {
+        return this.roles.find((role) => roles.find((r) => r === role) !== undefined) !== undefined;
+    }
+    isRoot() {
+        return this.roles.find((role) => role === 'ROLE_ROOT') !== undefined;
+    }
+}
+exports.AuthenticationCredentials = AuthenticationCredentials;
+var AuthenticationType;
+(function (AuthenticationType) {
+    AuthenticationType["USER"] = "USER";
+    AuthenticationType["TOKEN"] = "TOKEN";
+})(AuthenticationType = exports.AuthenticationType || (exports.AuthenticationType = {}));
+class User {
+    constructor(id, customerId, username, email, passwordHash, roles) {
         this.id = id;
         this.customerId = customerId;
         this.username = username;
@@ -9,20 +29,19 @@ var User = /** @class */ (function () {
         this.passwordHash = passwordHash;
         this.roles = roles;
     }
-    User.prototype.hasAnyRole = function (roles) {
-        return this.roles.find(function (role) { return roles.find(function (r) { return r === role; }) !== undefined; }) !== undefined;
-    };
-    return User;
-}());
+    hasAnyRole(roles) {
+        return this.roles.find((role) => roles.find((r) => r === role) !== undefined) !== undefined;
+    }
+}
 exports.User = User;
-var APIKey = /** @class */ (function () {
-    function APIKey(id, customerId, userId, value, roles) {
+class APIKey {
+    constructor(id, customerId, userId, value, roles) {
         this.id = id;
         this.customerId = customerId;
         this.userId = userId;
         this.value = value;
         this.roles = roles;
     }
-    return APIKey;
-}());
+}
 exports.APIKey = APIKey;
+//# sourceMappingURL=Authentication.js.map
