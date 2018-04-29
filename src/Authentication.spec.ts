@@ -1,6 +1,5 @@
 import {AuthenticationCredentials, AuthenticationType, User} from './Authentication';
 
-
 describe('AuthenticationCredentials', () => {
 
     const defaultAuth = new AuthenticationCredentials('id', 'customerId', ['ROLE_ADMIN', 'ROLE_ROOT'],

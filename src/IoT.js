@@ -1,21 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class IoTData {
-    constructor(id, endPointId, timestamp, sensorId, value) {
-        this.id = id;
+    constructor(endPointId, timestamp, sensorId, value, id, customerId) {
         this.endPointId = endPointId;
         this.timestamp = timestamp;
         this.sensorId = sensorId;
         this.value = value;
+        this.id = id;
+        this.customerId = customerId;
     }
 }
 exports.IoTData = IoTData;
-class IotState {
-    constructor(endPointId, actuatorId, value) {
+class IoTState {
+    constructor(endPointId, actuatorId, value, id, customerId, timestamp) {
         this.endPointId = endPointId;
         this.actuatorId = actuatorId;
         this.value = value;
+        this.id = id;
+        this.customerId = customerId;
+        this.timestamp = timestamp;
     }
 }
-exports.IotState = IotState;
+exports.IoTState = IoTState;
 //# sourceMappingURL=IoT.js.map
