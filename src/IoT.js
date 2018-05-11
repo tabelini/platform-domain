@@ -22,4 +22,12 @@ class IoTState {
     }
 }
 exports.IoTState = IoTState;
+class IoTSensor {
+    constructor(endPointId, sensorId, type) {
+        this.endPointId = endPointId;
+        this.sensorId = sensorId;
+        this.type = type;
+    }
+}
+exports.IoTSensor = IoTSensor;
 //# sourceMappingURL=IoT.js.map
