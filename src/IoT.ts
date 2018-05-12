@@ -4,7 +4,6 @@ export class IoTData {
     }
 }
 
-
 /**
  * Digital 3, 5, 6, 9, 10, 11: actuatorId 0 - 5
  */
