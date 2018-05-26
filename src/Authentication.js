@@ -21,19 +21,28 @@ var AuthenticationType;
     AuthenticationType["TOKEN"] = "TOKEN";
 })(AuthenticationType = exports.AuthenticationType || (exports.AuthenticationType = {}));
 class User {
-    constructor(id, customerId, username, email, passwordHash, roles) {
+    constructor(id, customerId, username, email, passwordHash, roles, authenticationStatus = null) {
         this.id = id;
         this.customerId = customerId;
         this.username = username;
         this.email = email;
         this.passwordHash = passwordHash;
         this.roles = roles;
+        this.authenticationStatus = authenticationStatus;
     }
     hasAnyRole(roles) {
         return this.roles.find((role) => roles.find((r) => r === role) !== undefined) !== undefined;
     }
 }
 exports.User = User;
+var AuthenticationStatus;
+(function (AuthenticationStatus) {
+    AuthenticationStatus[AuthenticationStatus["LOGGED"] = 0] = "LOGGED";
+    AuthenticationStatus[AuthenticationStatus["LOGGING"] = 1] = "LOGGING";
+    AuthenticationStatus[AuthenticationStatus["LOGGED_OUT"] = 2] = "LOGGED_OUT";
+    AuthenticationStatus[AuthenticationStatus["WRONG_PASSWORD"] = 3] = "WRONG_PASSWORD";
+    AuthenticationStatus[AuthenticationStatus["NOT_LOGGED"] = 4] = "NOT_LOGGED";
+})(AuthenticationStatus = exports.AuthenticationStatus || (exports.AuthenticationStatus = {}));
 class APIKey {
     constructor(id, customerId, userId, value, roles) {
         this.id = id;

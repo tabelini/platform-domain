@@ -23,10 +23,12 @@ class IoTState {
 }
 exports.IoTState = IoTState;
 class IoTSensor {
-    constructor(endPointId, sensorId, type) {
+    constructor(endPointId, sensorId, type, id, customerId) {
         this.endPointId = endPointId;
         this.sensorId = sensorId;
         this.type = type;
+        this.id = id;
+        this.customerId = customerId;
     }
 }
 exports.IoTSensor = IoTSensor;
