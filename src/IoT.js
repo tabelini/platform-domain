@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class IoTData {
-    constructor(endPointId, timestamp, sensorId, value, id, customerId) {
+    constructor(endPointId, timestamp, sensorId, value, defaultValue, id, customerId) {
         this.endPointId = endPointId;
         this.timestamp = timestamp;
         this.sensorId = sensorId;
         this.value = value;
+        this.defaultValue = defaultValue;
         this.id = id;
         this.customerId = customerId;
     }

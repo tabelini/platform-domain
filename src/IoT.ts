@@ -8,7 +8,7 @@ export class IoTData {
  * Digital 3, 5, 6, 9, 10, 11: actuatorId 0 - 5
  */
 export class IoTState {
-    constructor(public endPointId: string, public actuatorId: number, public value: number,
+    constructor(public endPointId: string, public actuatorId: number, public value: number, public defaultValue: number,
                 public id?: string, public customerId?: string, public timestamp?: number) {
     }
 }
