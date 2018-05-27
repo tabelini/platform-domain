@@ -30,6 +30,11 @@ class User {
         this.roles = roles;
         this.authenticationStatus = authenticationStatus;
     }
+    static fromJson(json) {
+        const object = Object.create(User.prototype);
+        Object.assign(object, json);
+        return object;
+    }
     hasAnyRole(roles) {
         return this.roles.find((role) => roles.find((r) => r === role) !== undefined) !== undefined;
     }
@@ -37,11 +42,12 @@ class User {
 exports.User = User;
 var AuthenticationStatus;
 (function (AuthenticationStatus) {
-    AuthenticationStatus[AuthenticationStatus["LOGGED"] = 0] = "LOGGED";
-    AuthenticationStatus[AuthenticationStatus["LOGGING"] = 1] = "LOGGING";
-    AuthenticationStatus[AuthenticationStatus["LOGGED_OUT"] = 2] = "LOGGED_OUT";
-    AuthenticationStatus[AuthenticationStatus["WRONG_PASSWORD"] = 3] = "WRONG_PASSWORD";
-    AuthenticationStatus[AuthenticationStatus["NOT_LOGGED"] = 4] = "NOT_LOGGED";
+    AuthenticationStatus["LOGGED"] = "LOGGED";
+    AuthenticationStatus["LOGGING"] = "LOGGING";
+    AuthenticationStatus["LOGGED_OUT"] = "LOGGED_OUT";
+    AuthenticationStatus["WRONG_PASSWORD"] = "WRONG_PASSWORD";
+    AuthenticationStatus["UNKNOWN_ERROR"] = "UNKNOWN_ERROR";
+    AuthenticationStatus["NOT_LOGGED"] = "NOT_LOGGED";
 })(AuthenticationStatus = exports.AuthenticationStatus || (exports.AuthenticationStatus = {}));
 class APIKey {
     constructor(id, customerId, userId, value, roles) {

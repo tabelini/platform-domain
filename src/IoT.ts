@@ -22,3 +22,29 @@ export class IoTSensor {
                 public customerId?: string) {
     }
 }
+
+/**
+ * Time Condition that modifies the Actuators values
+ */
+export class TimeCondition {
+    constructor(public endPointId: string, public actuatorId: number, public value: number, public timeRange: string,
+                public weekDays?: number[], public months?: number[], public days?: number[], public id?: string,
+                public customerId?: string, public timestamp?: number) {
+    }
+}
+
+/**
+ * Sensor Condition that modifies the actuators values
+ */
+export class SensorCondition {
+    constructor(public endPointId: string, public actuatorId: number, public value: number,
+                public sensorEndPointId: string, public sensorId: number, public operator: Operator,
+                public referenceValues: number[], latchTime: number, public lastTimeOn?: number,
+                public id?: string, public customerId?: string, public timestamp?: number) {
+    }
+}
+
+export enum Operator {
+    GREATER_THAN = 'GREATER_THAN',
+    LESS_THAN = 'LESS_THAN',
+}

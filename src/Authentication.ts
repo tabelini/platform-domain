@@ -34,12 +34,12 @@ export class User {
 }
 
 export enum AuthenticationStatus {
-    LOGGED,
-    LOGGING,
-    LOGGED_OUT,
-    WRONG_PASSWORD,
-    UNKNOWN_ERROR,
-    NOT_LOGGED,
+    LOGGED = 'LOGGED',
+    LOGGING = 'LOGGING',
+    LOGGED_OUT = 'LOGGED_OUT',
+    WRONG_PASSWORD = 'WRONG_PASSWORD',
+    UNKNOWN_ERROR = 'UNKNOWN_ERROR',
+    NOT_LOGGED = 'NOT_LOGGED',
 }
 
 export class APIKey {

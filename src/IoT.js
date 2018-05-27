@@ -32,4 +32,40 @@ class IoTSensor {
     }
 }
 exports.IoTSensor = IoTSensor;
+class TimeCondition {
+    constructor(endPointId, actuatorId, value, timeRange, weekDays, months, days, id, customerId, timestamp) {
+        this.endPointId = endPointId;
+        this.actuatorId = actuatorId;
+        this.value = value;
+        this.timeRange = timeRange;
+        this.weekDays = weekDays;
+        this.months = months;
+        this.days = days;
+        this.id = id;
+        this.customerId = customerId;
+        this.timestamp = timestamp;
+    }
+}
+exports.TimeCondition = TimeCondition;
+class SensorCondition {
+    constructor(endPointId, actuatorId, value, sensorEndPointId, sensorId, operator, referenceValues, latchTime, lastTimeOn, id, customerId, timestamp) {
+        this.endPointId = endPointId;
+        this.actuatorId = actuatorId;
+        this.value = value;
+        this.sensorEndPointId = sensorEndPointId;
+        this.sensorId = sensorId;
+        this.operator = operator;
+        this.referenceValues = referenceValues;
+        this.lastTimeOn = lastTimeOn;
+        this.id = id;
+        this.customerId = customerId;
+        this.timestamp = timestamp;
+    }
+}
+exports.SensorCondition = SensorCondition;
+var Operator;
+(function (Operator) {
+    Operator["GREATER_THAN"] = "GREATER_THAN";
+    Operator["LESS_THAN"] = "LESS_THAN";
+})(Operator = exports.Operator || (exports.Operator = {}));
 //# sourceMappingURL=IoT.js.map
