@@ -38,13 +38,13 @@ export class TimeCondition {
  */
 export class SensorCondition {
     constructor(public endPointId: string, public actuatorId: number, public value: number,
-                public sensorEndPointId: string, public sensorId: number, public operator: Operator,
-                public referenceValues: number[], latchTime: number, public lastTimeOn?: number,
+                public sensorEndPointId: string, public sensorId: number, public operator: IoTOperator,
+                public referenceValues: number[], public latchTime: number, public lastTimeOn?: number,
                 public id?: string, public customerId?: string, public timestamp?: number) {
     }
 }
 
-export enum Operator {
+export enum IoTOperator {
     GREATER_THAN = 'GREATER_THAN',
     LESS_THAN = 'LESS_THAN',
 }

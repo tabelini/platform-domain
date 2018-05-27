@@ -56,6 +56,7 @@ class SensorCondition {
         this.sensorId = sensorId;
         this.operator = operator;
         this.referenceValues = referenceValues;
+        this.latchTime = latchTime;
         this.lastTimeOn = lastTimeOn;
         this.id = id;
         this.customerId = customerId;
@@ -63,9 +64,9 @@ class SensorCondition {
     }
 }
 exports.SensorCondition = SensorCondition;
-var Operator;
-(function (Operator) {
-    Operator["GREATER_THAN"] = "GREATER_THAN";
-    Operator["LESS_THAN"] = "LESS_THAN";
-})(Operator = exports.Operator || (exports.Operator = {}));
+var IoTOperator;
+(function (IoTOperator) {
+    IoTOperator["GREATER_THAN"] = "GREATER_THAN";
+    IoTOperator["LESS_THAN"] = "LESS_THAN";
+})(IoTOperator = exports.IoTOperator || (exports.IoTOperator = {}));
 //# sourceMappingURL=IoT.js.map
