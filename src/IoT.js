@@ -1,22 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class IoTData {
-    constructor(endPointId, timestamp, sensorId, value, defaultValue, id, customerId) {
+    constructor(endPointId, timestamp, sensorId, value, id, customerId) {
         this.endPointId = endPointId;
         this.timestamp = timestamp;
         this.sensorId = sensorId;
         this.value = value;
-        this.defaultValue = defaultValue;
         this.id = id;
         this.customerId = customerId;
     }
 }
 exports.IoTData = IoTData;
 class IoTState {
-    constructor(endPointId, actuatorId, value, id, customerId, timestamp) {
+    constructor(endPointId, actuatorId, value, defaultValue, id, customerId, timestamp) {
         this.endPointId = endPointId;
         this.actuatorId = actuatorId;
         this.value = value;
+        this.defaultValue = defaultValue;
         this.id = id;
         this.customerId = customerId;
         this.timestamp = timestamp;
@@ -65,6 +65,17 @@ class SensorCondition {
     }
 }
 exports.SensorCondition = SensorCondition;
+class EndPoint {
+    constructor(name, location, type = '', id, customerId, timestamp) {
+        this.name = name;
+        this.location = location;
+        this.type = type;
+        this.id = id;
+        this.customerId = customerId;
+        this.timestamp = timestamp;
+    }
+}
+exports.EndPoint = EndPoint;
 var IoTOperator;
 (function (IoTOperator) {
     IoTOperator["GREATER_THAN"] = "GREATER_THAN";

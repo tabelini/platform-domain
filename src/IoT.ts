@@ -44,6 +44,16 @@ export class SensorCondition {
     }
 }
 
+/**
+ * EndPoints of the system, that holds the sensors and Actuators
+ */
+export class EndPoint {
+    constructor(public name: string, public location: string, public type: string = '',
+                public id?: string, public customerId?: string, public timestamp?: number) {
+    }
+
+}
+
 export enum IoTOperator {
     GREATER_THAN = 'GREATER_THAN',
     LESS_THAN = 'LESS_THAN',
